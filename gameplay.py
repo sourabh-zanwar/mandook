@@ -2,9 +2,9 @@
 
 import os
 
-import Player
-import Cards
-import CompareCards
+from Player import Player
+from Cards import Cards
+from CompareCards import CompareCards
 
 from util.utils import generate_random_string
 

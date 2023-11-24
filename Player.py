@@ -37,6 +37,7 @@ class Player():
         self.mandook = 0
         self.round_6_cards = {}
         self.session_id = session_id
+        self.info_dict = {}
         
     def get_cards(self):
         return self.cards_in_hand
@@ -100,7 +101,7 @@ class Player():
         return self.round_6_cards
     
     def store_details(self):
-        info_dict = {
+        self.info_dict = {
             'id': self.id,
             'amount': self.balance,
             'cards': self.cards_in_hand,
@@ -108,6 +109,6 @@ class Player():
             'mandook': self.mandook
             }
         with open('./card_store/' + self.session_id +'/' + self.id + '.json', 'w') as fp:
-            json.dump(info_dict, fp)
+            json.dump(self.info_dict, fp)
         
     
